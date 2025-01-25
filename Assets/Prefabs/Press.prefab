@@ -178,5 +178,7 @@ MonoBehaviour:
   movingpart: {fileID: 4508457928773190377}
   end: {fileID: 9129466539582833950}
   start: {fileID: 4342184807229561253}
-  speed: 5
-  waittime: 5
+  speed: 3
+  waittime: 10
+  elapsedtime: 0
+  elapsedtimeback: 0
