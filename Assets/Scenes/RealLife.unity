@@ -424,27 +424,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1a07b11a1fd10446ab5a6d0b0acb113, type: 3}
---- !u!1 &205797428 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 371722713141372181, guid: f264aa23b92225e48bbaeb2cb75984bd, type: 3}
-  m_PrefabInstance: {fileID: 1898287796}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &205797429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205797428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfc61f039b7bd9346b0d722fd93728aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionText: Press E to interact
-  OnInteract:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &275909142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,27 +2401,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &834399871 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 60364345746240988, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
-  m_PrefabInstance: {fileID: 3503677675030980482}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &834399872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834399871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfc61f039b7bd9346b0d722fd93728aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionText: Press E to interact
-  OnInteract:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &861846946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4886,10 +4844,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
-    - target: {fileID: 371722713141372181, guid: f264aa23b92225e48bbaeb2cb75984bd, type: 3}
-      propertyPath: m_TagString
-      value: Touchable
-      objectReference: {fileID: 0}
     - target: {fileID: 3497902269060517273, guid: f264aa23b92225e48bbaeb2cb75984bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 52.26
@@ -4933,10 +4887,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 371722713141372181, guid: f264aa23b92225e48bbaeb2cb75984bd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 205797429}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f264aa23b92225e48bbaeb2cb75984bd, type: 3}
 --- !u!1 &1944182537
 GameObject:
@@ -5782,10 +5733,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC Female
       objectReference: {fileID: 0}
-    - target: {fileID: 60364345746240988, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
-      propertyPath: m_TagString
-      value: Touchable
-      objectReference: {fileID: 0}
     - target: {fileID: 3863093890675038827, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 52.26
@@ -5829,10 +5776,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 60364345746240988, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 834399872}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
