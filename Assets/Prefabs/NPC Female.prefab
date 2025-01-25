@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 8029874910463324978}
   - component: {fileID: 1584887305721544304}
   - component: {fileID: 1420292144411435017}
+  - component: {fileID: 3696251908178040661}
   m_Layer: 0
   m_Name: NPC Female
-  m_TagString: Untagged
+  m_TagString: Touchable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +195,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3696251908178040661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60364345746240988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc61f039b7bd9346b0d722fd93728aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionText: Press E to interact
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5159570947229417178
 PrefabInstance:
   m_ObjectHideFlags: 0
