@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,39 +6,45 @@ public class NPC : MonoBehaviour
 {
     public Transform player;
     private NavMeshAgent navMeshAgent;
-    public bool playerTooClose;
-    public float triggerdistance;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(TooClosePlayerDistance() && navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete){
-            int randomnumber = Random.Range(0, GameManager.gameManager.escapePoints.Count);
-            Debug.Log(randomnumber);
-            navMeshAgent.destination = GameManager.gameManager.escapePoints[randomnumber].position;
-        }
-        Debug.Log(navMeshAgent.pathStatus);
 
+        if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
+        {
+            navMeshAgent.ResetPath();
+        }
     }
-    public bool TooClosePlayerDistance()
+    private void OnTriggerEnter(Collider other)
     {
-        Transform playerPosition = GameManager.gameManager.player.transform;
-        float distance = Vector3.Distance(this.transform.position, playerPosition.position);
-        if (distance < triggerdistance)
+        if (other.transform.tag == "Player")
         {
-            return true;
+            
+            if (!navMeshAgent.hasPath)
+            {
+                int randomnumber = Random.Range(0, GameManager.gameManager.escapePoints.Count - 1);
+                navMeshAgent.destination = GameManager.gameManager.escapePoints[randomnumber].position;
+            }
+
         }
-        else
+    }
+    private void OnTriggerStay(Collider other){
+        if (other.transform.tag == "Player")
         {
-            return false;
+            if (!navMeshAgent.hasPath)
+            {
+                int randomnumber = Random.Range(0, GameManager.gameManager.escapePoints.Count - 1);
+                navMeshAgent.destination = GameManager.gameManager.escapePoints[randomnumber].position;
+            }
+
         }
-
-
     }
 }
