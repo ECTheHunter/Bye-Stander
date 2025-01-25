@@ -7,7 +7,9 @@ namespace DialogueEditor
     public class InputManager : MonoBehaviour
     {
         public KeyCode m_UpKey;
+        public KeyCode m_UpKey2;
         public KeyCode m_DownKey;
+        public KeyCode m_DownKey2;
         public KeyCode m_SelectKey;
 
         private void Update()
@@ -22,9 +24,9 @@ namespace DialogueEditor
         {
             if (ConversationManager.Instance.IsConversationActive)
             {
-                if (Input.GetKeyDown(m_UpKey))
+                if (Input.GetKeyDown(m_UpKey) || Input.GetKeyDown(m_UpKey2))
                     ConversationManager.Instance.SelectPreviousOption();
-                else if (Input.GetKeyDown(m_DownKey))
+                else if (Input.GetKeyDown(m_DownKey) || Input.GetKeyDown(m_DownKey2))
                     ConversationManager.Instance.SelectNextOption();
                 else if (Input.GetKeyDown(m_SelectKey))
                     ConversationManager.Instance.PressSelectedOption();

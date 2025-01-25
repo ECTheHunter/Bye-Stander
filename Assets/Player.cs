@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using DialogueEditor;
 
 public class Player : MonoBehaviour
 {
@@ -30,12 +31,12 @@ public class Player : MonoBehaviour
         Vector3 right = transform.TransformDirection(Vector3.right);
 
         bool isrunning = Input.GetKey(KeyCode.LeftShift);
-        float curspeedX = canMove ? (isrunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0f;
-        float curspeedY = canMove ? (isrunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0f;
+        float curspeedX = canMove && !ConversationManager.Instance.IsConversationActive ? (isrunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0f;
+        float curspeedY = canMove && !ConversationManager.Instance.IsConversationActive ? (isrunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0f;
         float moveDirectionY = moveDirection.y;
         moveDirection = (forward * curspeedX) + (right * curspeedY);
 
-        if (Input.GetKey(KeyCode.Space) && canMove && characterController.isGrounded)
+        if (Input.GetKey(KeyCode.Space) && canMove && characterController.isGrounded && !ConversationManager.Instance.IsConversationActive)
         {
             moveDirection.y = jumpPower;
         }

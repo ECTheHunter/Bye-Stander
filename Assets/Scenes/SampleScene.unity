@@ -871,7 +871,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UpKey: 273
+  m_UpKey2: 119
   m_DownKey: 274
+  m_DownKey2: 115
   m_SelectKey: 32
 --- !u!4 &1264323244
 Transform:

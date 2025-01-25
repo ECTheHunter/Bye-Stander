@@ -13,9 +13,9 @@ public class conversationStarter : MonoBehaviour
 
         if(other.CompareTag("Player")){
 
-            if(Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.F)&& !ConversationManager.Instance.IsConversationActive)
             {
-                if(isMadeBefore)
+                if(isMadeBefore )
                 {
                     
                     ConversationManager.Instance.StartConversation(conversation1);
@@ -24,7 +24,7 @@ public class conversationStarter : MonoBehaviour
                 {
                     ConversationManager.Instance.StartConversation(conversation);
                     count++;
-                    if(count == 3)
+                    if(count == 2)
                     {
                         isMadeBefore = true;
                         
