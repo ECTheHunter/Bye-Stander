@@ -1140,13 +1140,16 @@ MonoBehaviour:
   soundLists:
   - name: WALK
     sounds:
-    - {fileID: 8300000, guid: 3c330fc51ceff854a953cc932075a35a, type: 3}
+    - {fileID: 8300000, guid: ff3cc6aa2f0789f41bd9feae39c9a1c7, type: 3}
   - name: JUMP
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 83d5bba23a52d5c42b9afaeb3b611ad2, type: 3}
   - name: LAND
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: 3b6de4a4c0d54964d86c59d19bcdc3b4, type: 3}
   - name: RUN
-    sounds: []
+    sounds:
+    - {fileID: 8300000, guid: ed2c6b19506ddfd468e7292f3f027266, type: 3}
 --- !u!82 &1733283233
 AudioSource:
   m_ObjectHideFlags: 0
