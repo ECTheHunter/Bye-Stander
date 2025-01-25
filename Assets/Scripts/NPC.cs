@@ -11,20 +11,23 @@ public class NPC : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(TooClosePlayerDistance()){
-            int randomnumber = Random.Range(0, GameManager.instance.escapePoints.Count-1);
+        if(TooClosePlayerDistance() && navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete){
+            int randomnumber = Random.Range(0, GameManager.gameManager.escapePoints.Count);
             Debug.Log(randomnumber);
+            navMeshAgent.destination = GameManager.gameManager.escapePoints[randomnumber].position;
         }
+        Debug.Log(navMeshAgent.pathStatus);
 
     }
     public bool TooClosePlayerDistance()
     {
-        Transform playerPosition = GameManager.instance.player.transform;
+        Transform playerPosition = GameManager.gameManager.player.transform;
         float distance = Vector3.Distance(this.transform.position, playerPosition.position);
         if (distance < triggerdistance)
         {
