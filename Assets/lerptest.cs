@@ -11,7 +11,7 @@ public class lerptest : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine("Test");
+        StartCoroutine(Test());
     }
 
     // Update is called once per frame
@@ -23,7 +23,9 @@ public class lerptest : MonoBehaviour
     }
     IEnumerator Test()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         Debug.Log("sdsd");
+        yield return new WaitForSeconds(3);
+        Debug.Log("ASSASASAsd");
     }
 }
