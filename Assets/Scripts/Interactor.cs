@@ -1,9 +1,11 @@
 using UnityEngine;
 using DialogueEditor;
+using TMPro;
 
 public class Interactor : MonoBehaviour
 {
-    
+    private InteractObject _currentInteractableObject;
+    [SerializeField] private GameObject _interactionPrompt;
     [SerializeField] private NPCConversation conversation;
     [SerializeField] private NPCConversation conversation1;
     private bool isMadeBefore = false;
@@ -20,16 +22,45 @@ public class Interactor : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, _interactionMaxDistance, _interactionLayer))
         {
             if(hit.collider.CompareTag("Touchable")){
-                
-                if(Input.GetKeyDown(KeyCode.E))
+                InteractObject InteractableObject = hit.collider.GetComponent<InteractObject>();
+
+                if(InteractableObject != null && InteractableObject != _currentInteractableObject)
                 {
-                    Debug.Log("Hit " + hit.collider.name);
+                    _currentInteractableObject = InteractableObject;
+                    _interactionPrompt.SetActive(true);
+                    TextMeshProUGUI text = _interactionPrompt.GetComponentInChildren<TextMeshProUGUI>();
+                    if(text != null){
+                        text.text = _currentInteractableObject.GetInteractionText();
+                    }
+                }
+                else if(InteractableObject == null)
+                {
+                    _currentInteractableObject = null;
+                    _interactionPrompt.SetActive(false);
+                }
+
+                if(Input.GetKeyDown(KeyCode.E) && !ConversationManager.Instance.IsConversationActive)
+                {
+                    if(isMadeBefore){
+                        ConversationManager.Instance.StartConversation(conversation1);
+                    } else{
+                        Debug.Log("Hit " + hit.collider.name);
                     ConversationManager.Instance.StartConversation(conversation);
+                    isMadeBefore = true;
+                    }
+                    
                     
                 }
-            }
+            } 
             
             
+        } else {
+            _currentInteractableObject = null;
+            _interactionPrompt.SetActive(false);
+        }
+        if(ConversationManager.Instance.IsConversationActive){
+            _currentInteractableObject = null;
+            _interactionPrompt.SetActive(false);
         }
         
 
