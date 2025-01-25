@@ -18,14 +18,7 @@ public class RegularPress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (true)
-        {
             StartCoroutine("Lerping");
-            
-           
-          
-        }
-
     }
     IEnumerator Lerping()
     {
