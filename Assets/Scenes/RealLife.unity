@@ -2045,6 +2045,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3636211678228161692, guid: 3766b6c6530316943a793867e4d01466, type: 3}
+      propertyPath: conversation
+      value: 
+      objectReference: {fileID: 5297612099799327297, guid: 26f2f864b07e6594691b68274fd2c2d4, type: 3}
+    - target: {fileID: 3636211678228161692, guid: 3766b6c6530316943a793867e4d01466, type: 3}
+      propertyPath: conversation1
+      value: 
+      objectReference: {fileID: 1044493416702782460, guid: aa309e07593f92d48b3804f7c7a7c1a4, type: 3}
+    - target: {fileID: 3636211678228161692, guid: 3766b6c6530316943a793867e4d01466, type: 3}
       propertyPath: _interactionPrompt
       value: 
       objectReference: {fileID: 1467222277}
