@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
     public static GameManager gameManager { get; private set; }
     public List<Transform> escapePoints = new List<Transform>();
     public GameObject player;
+    public bool GoToBed1 = false;
+    public bool GoToBed2 = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -18,6 +20,17 @@ public class GameManager : MonoBehaviour
         {
             gameManager = this;
         }
+
+    }
+
+    public void setGoToBed1(bool bed1)
+    {
+        GoToBed1 = bed1;
+
+    }
+    public void setGoToBed2(bool bed2)
+    {
+        GoToBed2 = bed2;
 
     }
     void Start()

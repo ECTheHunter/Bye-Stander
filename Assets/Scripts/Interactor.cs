@@ -1,5 +1,6 @@
 using UnityEngine;
 using DialogueEditor;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Interactor : MonoBehaviour
@@ -21,7 +22,7 @@ public class Interactor : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _interactionMaxDistance, _interactionLayer))
         {
-            if(hit.collider.CompareTag("Touchable")){
+            if(hit.collider.CompareTag("Touchable")|| hit.collider.CompareTag("Bed")){
                 InteractObject InteractableObject = hit.collider.GetComponent<InteractObject>();
 
                 if(InteractableObject != null && InteractableObject != _currentInteractableObject)
@@ -39,8 +40,9 @@ public class Interactor : MonoBehaviour
                     _interactionPrompt.SetActive(false);
                 }
 
-                if(Input.GetKeyDown(KeyCode.E) && !ConversationManager.Instance.IsConversationActive)
+                if(Input.GetKeyDown(KeyCode.E) && !ConversationManager.Instance.IsConversationActive && hit.collider.CompareTag("Touchable"))
                 {
+                    InteractableObject.Interact();
                     if(isMadeBefore){
                         ConversationManager.Instance.StartConversation(conversation1);
                     } else{
@@ -50,6 +52,10 @@ public class Interactor : MonoBehaviour
                     }
                     
                     
+                }
+
+                if(hit.collider.CompareTag("Bed")){
+                    SceneManager.LoadScene("Dream");
                 }
             } 
             
