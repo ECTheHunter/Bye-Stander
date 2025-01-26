@@ -7,9 +7,12 @@ public class Interactor : MonoBehaviour
 {
     private InteractObject _currentInteractableObject;
     [SerializeField] private GameObject _interactionPrompt;
-    [SerializeField] private NPCConversation conversation;
-    [SerializeField] private NPCConversation conversation1;
-    private bool isMadeBefore = false;
+    [SerializeField] private NPCConversation FirstNPCconversation;
+    [SerializeField] private NPCConversation FirstNPCconversation1;
+    [SerializeField] private NPCConversation SecondNPCconversation;
+    [SerializeField] private NPCConversation SecondNPCconversation1;
+    private bool isMadeBeforeForFirst = false;
+    private bool isMadeBeforeForSecond = false;
     [SerializeField] private Transform _interactionPoint;
     [SerializeField] private float _interactionMaxDistance = 10f;
     [SerializeField] private LayerMask _interactionLayer;
@@ -48,16 +51,23 @@ public class Interactor : MonoBehaviour
                     if(hit.collider.CompareTag("NPC2")){
                         GameManager.gameManager.setGoToBed2(true);
                     }
-                    InteractableObject.Interact();
-                    if(isMadeBefore){
-                        ConversationManager.Instance.StartConversation(conversation1);
-                    } else{
-                        Debug.Log("Hit " + hit.collider.name);
-                    ConversationManager.Instance.StartConversation(conversation);
-                    isMadeBefore = true;
+                    if(!isMadeBeforeForFirst && hit.collider.CompareTag("NPC1")){
+                        Debug.Log("First NPC conversation started");
+                        ConversationManager.Instance.StartConversation(FirstNPCconversation);
+                        isMadeBeforeForFirst = true;
+                    }else if(!isMadeBeforeForSecond && hit.collider.CompareTag("NPC2")){
+                        Debug.Log("Second NPC conversation started");
+                    ConversationManager.Instance.StartConversation(SecondNPCconversation);
+                    isMadeBeforeForSecond = true;
+                    }else if(isMadeBeforeForFirst && hit.collider.CompareTag("NPC1")){
+                        Debug.Log("First NPC second conversation started");
+                        ConversationManager.Instance.StartConversation(FirstNPCconversation1);
+                    } else if(isMadeBeforeForSecond && hit.collider.CompareTag("NPC2")){
+                        Debug.Log("Second NPC second conversation started");
+                        ConversationManager.Instance.StartConversation(SecondNPCconversation1);
                     }
                     
-                    
+                    InteractableObject.Interact();
                 }
 
                 if(hit.collider.CompareTag("Bed")){
