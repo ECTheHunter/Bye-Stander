@@ -966,6 +966,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: soundLists.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: soundLists.Array.data[4].name
+      value: SPEAKING
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: soundLists.Array.data[5].name
+      value: ALARM
+      objectReference: {fileID: 0}
     - target: {fileID: 6561866522060956932, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: m_Name
       value: SoundManager
