@@ -17,7 +17,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private SoundList[] soundLists;
     private static SoundManager instance;
     private AudioSource audioSource;
-    private static float volume = 0.008f;
+    private static float volume = 1f;
     void Awake(){
         instance = this;
     }
@@ -39,9 +39,7 @@ public class SoundManager : MonoBehaviour
         instance.audioSource.Stop();
     }
 
-    public static void SetVolume(float newVolume){
-        volume++;
-    }
+    
     
 
     
