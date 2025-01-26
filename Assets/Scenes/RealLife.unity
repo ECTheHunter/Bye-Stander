@@ -5276,6 +5276,38 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3696251908178040661, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696251908178040661, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696251908178040661, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8991723907462308503}
+    - target: {fileID: 3696251908178040661, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696251908178040661, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_layer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696251908178040661, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696251908178040661, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696251908178040661, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3863093890675038827, guid: f28ee2250813e5c4188ae0d0fc2ae1c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 52.26
