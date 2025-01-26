@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionPrompt: {fileID: 0}
-  conversation: {fileID: 0}
-  conversation1: {fileID: 0}
+  conversation: {fileID: 5297612099799327297, guid: 26f2f864b07e6594691b68274fd2c2d4, type: 3}
+  conversation1: {fileID: 1044493416702782460, guid: aa309e07593f92d48b3804f7c7a7c1a4, type: 3}
   _interactionPoint: {fileID: 7201519364707235254}
   _interactionMaxDistance: 1.2
   _interactionLayer:
