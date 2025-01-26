@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     public void Quit()
     {
+        Debug.Log("Quit");
         Application.Quit();
     }
 }

@@ -17,7 +17,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private SoundList[] soundLists;
     private static SoundManager instance;
     private AudioSource audioSource;
-    private static float volume = 0.008f;
+    private static float volume = 1f;
     void Awake(){
         instance = this;
     }
@@ -26,7 +26,7 @@ public class SoundManager : MonoBehaviour
     }
 
     public static void PlaySound(SoundType soundType){
-        
+        //instance.audioSource.loop = false;
         AudioClip[] clips = instance.soundLists[(int)soundType].Sounds;
         AudioClip clipToPlay = clips[UnityEngine.Random.Range(0, clips.Length)];
         instance.audioSource.PlayOneShot(clipToPlay, volume);
@@ -40,10 +40,14 @@ public class SoundManager : MonoBehaviour
     }
 
     public static void SetVolume(float newVolume){
-        volume++;
+        volume = newVolume;
     }
     
-
+    /*public static void PlaySoundAndLoop(SoundType soundType){
+                AudioClip[] clips = instance.soundLists[(int)soundType].Sounds;
+        AudioClip clipToPlay = clips[UnityEngine.Random.Range(0, clips.Length)];
+        instance.audioSource.Play(clipToPlay, volume);
+    }*/
     
 
 #if UNITY_EDITOR
