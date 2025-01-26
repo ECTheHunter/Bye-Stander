@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Touchable
   - Bed
+  - NPC1
+  - NPC2
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - Interactable
   - Touchable
   - Bed
-  - 
-  - 
+  - NPC1
+  - NPC2
   - 
   - 
   - 

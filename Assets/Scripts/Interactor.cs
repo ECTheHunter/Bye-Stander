@@ -22,7 +22,7 @@ public class Interactor : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _interactionMaxDistance, _interactionLayer))
         {
-            if(hit.collider.CompareTag("Touchable")|| hit.collider.CompareTag("Bed")){
+            if(hit.collider.CompareTag("NPC1")|| hit.collider.CompareTag("NPC2")|| hit.collider.CompareTag("Bed")){
                 InteractObject InteractableObject = hit.collider.GetComponent<InteractObject>();
 
                 if(InteractableObject != null && InteractableObject != _currentInteractableObject)
@@ -40,8 +40,14 @@ public class Interactor : MonoBehaviour
                     _interactionPrompt.SetActive(false);
                 }
 
-                if(Input.GetKeyDown(KeyCode.E) && !ConversationManager.Instance.IsConversationActive && hit.collider.CompareTag("Touchable"))
+                if(Input.GetKeyDown(KeyCode.E) && !ConversationManager.Instance.IsConversationActive && (hit.collider.CompareTag("NPC1")|| hit.collider.CompareTag("NPC2")))
                 {
+                    if(hit.collider.CompareTag("NPC1")){
+                        GameManager.gameManager.setGoToBed1(true);
+                    }
+                    if(hit.collider.CompareTag("NPC2")){
+                        GameManager.gameManager.setGoToBed2(true);
+                    }
                     InteractableObject.Interact();
                     if(isMadeBefore){
                         ConversationManager.Instance.StartConversation(conversation1);
@@ -55,8 +61,14 @@ public class Interactor : MonoBehaviour
                 }
 
                 if(hit.collider.CompareTag("Bed")){
-                    SceneManager.LoadScene("Dream");
-                }
+                    if(GameManager.gameManager.getGoToBed1() && GameManager.gameManager.getGoToBed2() && Input.GetKeyDown(KeyCode.E)){
+                        SceneManager.LoadScene("Dream");
+                    } else if (!GameManager.gameManager.getGoToBed1() || !GameManager.gameManager.getGoToBed2()){
+                        TextMeshProUGUI text = _interactionPrompt.GetComponentInChildren<TextMeshProUGUI>();
+                        text.text = "You need to talk to both NPCs first";
+                    }
+                    
+                } 
             } 
             
             

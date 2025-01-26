@@ -33,6 +33,14 @@ public class GameManager : MonoBehaviour
         GoToBed2 = bed2;
 
     }
+    public bool getGoToBed1()
+    {
+        return GoToBed1;
+    }
+    public bool getGoToBed2()
+    {
+        return GoToBed2;
+    }
     void Start()
     {
         
