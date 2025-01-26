@@ -865,8 +865,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: AlarmSound
+      value: 
+      objectReference: {fileID: 1017157802}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: MachineSound
+      value: 
+      objectReference: {fileID: 1017157804}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: SpeakingSound
+      value: 
+      objectReference: {fileID: 1017157803}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: soundLists.Array.size
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: soundLists.Array.data[4].name
@@ -882,15 +894,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: soundLists.Array.data[4].sounds.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: soundLists.Array.data[5].sounds.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: soundLists.Array.data[6].sounds.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: 'soundLists.Array.data[4].sounds.Array.data[0]'
@@ -953,6 +965,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+--- !u!82 &1017157802 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3707783234358932448, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+  m_PrefabInstance: {fileID: 1017157800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1017157803 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6111184033113197058, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+  m_PrefabInstance: {fileID: 1017157800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1017157804 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7563271543178476489, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+  m_PrefabInstance: {fileID: 1017157800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1037009167 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4604135411085683403, guid: 2055ed601fb9f0e478dcf4d4b34a38bd, type: 3}

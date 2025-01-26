@@ -13,7 +13,7 @@ public class ExitTrigger : MonoBehaviour
     {
         SceneManager.LoadScene("RealLifeEnd");
         
-            Debug.Log("Player has entered the exit trigger" + other.gameObject.name);
+        Debug.Log("Player has entered the exit trigger" + other.gameObject.name);
         
     }
     // Update is called once per frame

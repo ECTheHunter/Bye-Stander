@@ -21,6 +21,12 @@ public class Interactor : MonoBehaviour
     [SerializeField] private int _numFound;
     [SerializeField] private bool showRay = true;
 
+    void Start()
+    {
+        SoundManager.PlayMachineSound();
+        SoundManager.PlayAlarmSound();
+        SoundManager.PlaySpeakingSound();
+    }
     private void Update() {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _interactionMaxDistance, _interactionLayer))

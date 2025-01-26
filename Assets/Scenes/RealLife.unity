@@ -967,8 +967,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: AlarmSound
+      value: 
+      objectReference: {fileID: 335614625}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: MachineSound
+      value: 
+      objectReference: {fileID: 335614627}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: SpeakingSound
+      value: 
+      objectReference: {fileID: 335614626}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: soundLists.Array.size
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: soundLists.Array.data[4].name
@@ -977,6 +989,10 @@ PrefabInstance:
     - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: soundLists.Array.data[5].name
       value: ALARM
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: soundLists.Array.data[6].name
+      value: MACHINES
       objectReference: {fileID: 0}
     - target: {fileID: 6561866522060956932, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: m_Name
@@ -1027,6 +1043,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+--- !u!82 &335614625 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3707783234358932448, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+  m_PrefabInstance: {fileID: 335614624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &335614626 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6111184033113197058, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+  m_PrefabInstance: {fileID: 335614624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &335614627 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7563271543178476489, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+  m_PrefabInstance: {fileID: 335614624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &338932983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2963,6 +2994,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 690476386babe2042af1faa564f41f70, type: 3}
   m_PrefabInstance: {fileID: 886728092}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &897919781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 897919783}
+  - component: {fileID: 897919782}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &897919782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897919781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e28e6ea41b0e5546b5668e5f086a162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &897919783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897919781}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6258972, y: 0.9722944, z: -3.5277996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &953534661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6334,3 +6409,4 @@ SceneRoots:
   - {fileID: 56307128}
   - {fileID: 953534663}
   - {fileID: 522775316}
+  - {fileID: 897919783}

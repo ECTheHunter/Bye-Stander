@@ -15,6 +15,10 @@ public class SoundManager : MonoBehaviour
     }
 
     [SerializeField] private SoundList[] soundLists;
+    [SerializeField] private AudioSource SpeakingSound;
+    [SerializeField] private AudioSource AlarmSound;
+    [SerializeField] private AudioSource MachineSound;
+  
     private static SoundManager instance;
     private AudioSource audioSource;
     private static float volume = 1f;
@@ -31,6 +35,15 @@ public class SoundManager : MonoBehaviour
         AudioClip clipToPlay = clips[UnityEngine.Random.Range(0, clips.Length)];
         instance.audioSource.PlayOneShot(clipToPlay, volume);
         //instance.audioSource.PlayOneShot(instance.soundLists[(int)soundType], volume);
+    }
+    public static void PlaySpeakingSound(){
+        instance.SpeakingSound.Play();
+    }
+     public static void PlayAlarmSound(){
+        instance.AlarmSound.Play();
+    }
+    public static void PlayMachineSound(){
+        instance.MachineSound.Play();
     }
     public static bool IsPlaying(){
         return instance.audioSource.isPlaying;

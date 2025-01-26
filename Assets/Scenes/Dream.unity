@@ -11748,6 +11748,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: AlarmSound
+      value: 
+      objectReference: {fileID: 1703299216}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: MachineSound
+      value: 
+      objectReference: {fileID: 1703299218}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: SpeakingSound
+      value: 
+      objectReference: {fileID: 1703299217}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: soundLists.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: soundLists.Array.data[4].name
+      value: SPEAKING
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: soundLists.Array.data[5].name
+      value: ALARM
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: soundLists.Array.data[6].name
+      value: MACHINES
+      objectReference: {fileID: 0}
     - target: {fileID: 6561866522060956932, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -11797,6 +11825,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+--- !u!82 &1703299216 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3707783234358932448, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+  m_PrefabInstance: {fileID: 1703299215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1703299217 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6111184033113197058, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+  m_PrefabInstance: {fileID: 1703299215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1703299218 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7563271543178476489, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+  m_PrefabInstance: {fileID: 1703299215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1714356478
 PrefabInstance:
   m_ObjectHideFlags: 0
