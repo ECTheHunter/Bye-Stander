@@ -864,6 +864,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3707783234358932448, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6388577235374391159, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: AlarmSound
       value: 
@@ -919,6 +923,10 @@ PrefabInstance:
     - target: {fileID: 6561866522060956932, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: m_Name
       value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563271543178476489, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7600423719305979991, guid: e7e68c08c593aac4fa444dd96a61e403, type: 3}
       propertyPath: m_LocalPosition.x
