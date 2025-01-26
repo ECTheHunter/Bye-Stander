@@ -8,12 +8,16 @@ public class SoundManager : MonoBehaviour
         WALK,
         JUMP,
         LAND,
-        RUN
+        RUN,
+        SPEAKING,
+        ALARM,
+        MACHINES
     }
 
     [SerializeField] private SoundList[] soundLists;
     private static SoundManager instance;
     private AudioSource audioSource;
+    private static float volume = 0.008f;
     void Awake(){
         instance = this;
     }
@@ -21,7 +25,7 @@ public class SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public static void PlaySound(SoundType soundType, float volume = 1){
+    public static void PlaySound(SoundType soundType){
         
         AudioClip[] clips = instance.soundLists[(int)soundType].Sounds;
         AudioClip clipToPlay = clips[UnityEngine.Random.Range(0, clips.Length)];
@@ -34,6 +38,11 @@ public class SoundManager : MonoBehaviour
     public static void StopSound(){
         instance.audioSource.Stop();
     }
+
+    public static void SetVolume(float newVolume){
+        volume++;
+    }
+    
 
     
 
