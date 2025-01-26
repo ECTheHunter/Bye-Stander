@@ -21,11 +21,12 @@ public class Interactor : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _interactionMaxDistance, _interactionLayer))
         {
-            if(hit.collider.CompareTag("Touchable")){
+            if(hit.collider.CompareTag("Touchable") || hit.collider.CompareTag("Bed")){
                 InteractObject InteractableObject = hit.collider.GetComponent<InteractObject>();
 
                 if(InteractableObject != null && InteractableObject != _currentInteractableObject)
                 {
+                    
                     _currentInteractableObject = InteractableObject;
                     _interactionPrompt.SetActive(true);
                     TextMeshProUGUI text = _interactionPrompt.GetComponentInChildren<TextMeshProUGUI>();
@@ -38,9 +39,12 @@ public class Interactor : MonoBehaviour
                     _currentInteractableObject = null;
                     _interactionPrompt.SetActive(false);
                 }
-
-                if(Input.GetKeyDown(KeyCode.E) && !ConversationManager.Instance.IsConversationActive)
+                if(hit.collider.CompareTag("Bed")){
+                    Debug.Log("Hit " + hit.collider.name);
+                }
+                if(Input.GetKeyDown(KeyCode.E) && !ConversationManager.Instance.IsConversationActive && hit.collider.CompareTag("Touchable"))
                 {
+                    InteractableObject.Interact();
                     if(isMadeBefore){
                         ConversationManager.Instance.StartConversation(conversation1);
                     } else{
@@ -54,7 +58,8 @@ public class Interactor : MonoBehaviour
             } 
             
             
-        } else {
+        }
+         else {
             _currentInteractableObject = null;
             _interactionPrompt.SetActive(false);
         }
