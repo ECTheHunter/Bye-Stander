@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using DialogueEditor;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        GameManager.gameManager.player = this.gameObject;
 
     }
 
@@ -30,13 +32,15 @@ public class Player : MonoBehaviour
         Vector3 right = transform.TransformDirection(Vector3.right);
 
         bool isrunning = Input.GetKey(KeyCode.LeftShift);
-        float curspeedX = canMove ? (isrunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0f;
-        float curspeedY = canMove ? (isrunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0f;
+        
+        float curspeedX = canMove && !ConversationManager.Instance.IsConversationActive ? (isrunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0f;
+        float curspeedY = canMove && !ConversationManager.Instance.IsConversationActive ? (isrunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0f;
         float moveDirectionY = moveDirection.y;
         moveDirection = (forward * curspeedX) + (right * curspeedY);
 
-        if (Input.GetKey(KeyCode.Space) && canMove && characterController.isGrounded)
+        if (Input.GetKey(KeyCode.Space) && canMove && characterController.isGrounded && !ConversationManager.Instance.IsConversationActive)
         {
+            SoundManager.PlaySound(SoundManager.SoundType.JUMP);
             moveDirection.y = jumpPower;
         }
         else
@@ -54,6 +58,11 @@ public class Player : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
-
+        if(!SoundManager.IsPlaying()&&characterController.isGrounded && !ConversationManager.Instance.IsConversationActive && !isrunning && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))){
+            SoundManager.PlaySound(SoundManager.SoundType.WALK);
+        }
+        if(!SoundManager.IsPlaying()&&isrunning){
+            SoundManager.PlaySound(SoundManager.SoundType.RUN);
+        }
     }
 }
